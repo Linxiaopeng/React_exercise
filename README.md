@@ -45,7 +45,6 @@ renderContent("Hello World");
 `render` 方法返回并列多个 JSX 元素是不合法的，需要将外层元素包裹起来。
 
 错误做法：
-
 ```
 render(){
     return(
@@ -56,7 +55,6 @@ render(){
 ```
 
 正确做法：
-
 ```
 render () {
   return (
@@ -69,10 +67,9 @@ render () {
 ```
 
 ### 插入表达式
-JSX 中可以插入 JavaScript 表达式，如 `const` 语句。
+JSX 中可以插入 JavaScript 表达式，如 `const` 语句
 
 表达式不仅可以作用在标签内部，也可以用在标签属性上，如：
-
 ```
 render () {
   const className = 'header'
@@ -85,7 +82,6 @@ render () {
 ```
 
 表达式中也可以加入条件返回：
-
 ```
 render () {
   const isGoodWord = true
