@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
@@ -21,9 +20,3 @@ class Header extends Component {
 }
 
 ReactDOM.render(<Header />, document.getElementById("root"));
-
-// function renderContent(content) {
-//   ReactDOM.render(<h1>{content}</h1>, document.getElementById("root"));
-// }
-
-// renderContent("Hello World");
