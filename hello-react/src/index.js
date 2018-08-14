@@ -2,21 +2,20 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-class Header extends Component {
-  render() {
-    const isGoodWord = false;
-    const goodWord = <strong> is good </strong>;
-    const badWord = <strong> is not good </strong>;
-    return (
-      <div>
-        <h1>
-          React Book
-          {isGoodWord ? goodWord : badWord}
-        </h1>
-        <h2> render title </h2>
-      </div>
+class Body extends Component {
+  getNotificationCount(count) {
+    const isEmpty = count <= 0 ? true : false;
+    const message = (
+      <span>
+        有({count})条未读消息
+      </span>
     );
+    const empty = <span>没有未读消息</span>;
+    return isEmpty ? empty : message;
+  }
+  render() {
+    return <div>{this.getNotificationCount(1)}</div>;
   }
 }
 
-ReactDOM.render(<Header />, document.getElementById("root"));
+ReactDOM.render(<Body />, document.getElementById("root"));
