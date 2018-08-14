@@ -2,45 +2,59 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-class House extends Component {
+class Title extends Component {
+  handleClickOnTitle (word, e) {
+    alert(this, word)
+  }
+
+  render () {
+    return (
+      <h1 onClick={this.handleClickOnTitle.bind(this, 'Hello')}>React.js</h1>
+    )
+  }
+}
+
+class Header extends Component {
   render() {
     return (
-      <div className="house">
-        <Room />
-        <Bathroom />
+      <div>
+        <Title />
+        <h2>This is Header</h2>
       </div>
     );
   }
 }
 
-class Room extends Component {
+class Main extends Component {
   render() {
     return (
-      <div className="room">
-        <Man />
-        <Dog />
-        <Dog />
+      <div>
+        <h2>This is main content</h2>
       </div>
     );
   }
 }
 
-class Bathroom extends Component {
+class Footer extends Component {
   render() {
-    return <div className="bathroom" />;
+    return (
+      <div>
+        <h2>This is footer</h2>
+      </div>
+    );
   }
 }
 
-class Man extends Component {
+class Index extends Component {
   render() {
-    return <div className="man" />;
+    return (
+      <div>
+        <Header />
+        <Main />
+        <Footer />
+      </div>
+    );
   }
 }
 
-class Dog extends Component {
-  render() {
-    return <div className="dog" />;
-  }
-}
-
-ReactDOM.render(<House />, document.getElementById("root"));
+ReactDOM.render(<Index />, document.getElementById("root"));
