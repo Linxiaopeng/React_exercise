@@ -3,14 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 class Title extends Component {
-  handleClickOnTitle (word, e) {
-    alert(this, word)
+  handleClickOnTitle(word, e) {
+    alert(this, word);
   }
 
-  render () {
+  render() {
     return (
-      <h1 onClick={this.handleClickOnTitle.bind(this, 'Hello')}>React.js</h1>
-    )
+      <h1 onClick={this.handleClickOnTitle.bind(this, "Hello")}>React.js</h1>
+    );
   }
 }
 
@@ -25,11 +25,34 @@ class Header extends Component {
   }
 }
 
+class LikeButton extends Component {
+  constructor() {
+    super();
+    this.state = { isLiked: false };
+  }
+
+  handleClickOnLikeButton() {
+    this.setState({
+      isLiked: !this.state.isLiked
+    });
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClickOnLikeButton.bind(this)}>
+        {this.state.isLiked ? "Unlike" : "Like"}
+        👍
+      </button>
+    );
+  }
+}
+
 class Main extends Component {
   render() {
     return (
       <div>
         <h2>This is main content</h2>
+        <LikeButton />
       </div>
     );
   }
