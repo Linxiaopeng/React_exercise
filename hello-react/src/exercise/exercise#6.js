@@ -8,17 +8,21 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 class Dog extends Component {
-constructor(){
-  super();
-  this.state={isBarking: }
-}
+  constructor() {
+    super();
+    this.state = { isBarking: false, isRunning: false };
+  }
 
   bark() {
     console.log("bark");
+    this.setState({ isBarking: true });
+    setTimeout(() => this.setState({ isBarking: false }), 20);
   }
 
   run() {
     console.log("run");
+    this.setState({ isRunning: true });
+    setTimeout(() => this.setState({ isRunning: false }), 20);
   }
 
   handleClick() {
