@@ -26,6 +26,11 @@ class Header extends Component {
 }
 
 class LikeButton extends Component {
+  static defaultProps = {
+    likedText: "Unlike",
+    unlikedText: "Like"
+  };
+
   constructor() {
     super();
     this.state = { isLiked: false };
@@ -40,7 +45,7 @@ class LikeButton extends Component {
   render() {
     return (
       <button onClick={this.handleClickOnLikeButton.bind(this)}>
-        {this.state.isLiked ? "Unlike" : "Like"}
+        {this.state.isLiked ? this.props.likedText : this.props.unlikedText}
         👍
       </button>
     );
@@ -53,6 +58,7 @@ class Main extends Component {
       <div>
         <h2>This is main content</h2>
         <LikeButton />
+        <LikeButton likedText="Nooice" unlikedText="Noice" />
       </div>
     );
   }
