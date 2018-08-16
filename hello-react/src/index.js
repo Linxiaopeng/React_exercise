@@ -52,6 +52,46 @@ class LikeButton extends Component {
   }
 }
 
+const users = [
+  { username: " Jerry", age: 21, gender: " male" },
+  { username: " Tom", age: 22, gender: " female" }
+];
+
+class User extends Component {
+  render() {
+    const { user } = this.props;
+    return (
+      <div>
+        <div>
+          Name:
+          {user.username}
+        </div>
+        <div>
+          Age:
+          {user.age}
+        </div>
+        <div>
+          Gender:
+          {user.gender}
+        </div>
+        <hr />
+      </div>
+    );
+  }
+}
+
+class List extends Component {
+  render() {
+    return (
+      <div>
+        {users.map((user, i) => (
+          <User key={i} user={user} />
+        ))}
+      </div>
+    );
+  }
+}
+
 class Main extends Component {
   render() {
     return (
@@ -59,6 +99,7 @@ class Main extends Component {
         <h2>This is main content</h2>
         <LikeButton />
         <LikeButton likedText="Nooice" unlikedText="Noice" />
+        <List />
       </div>
     );
   }
