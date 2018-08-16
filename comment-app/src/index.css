@@ -1,0 +1,128 @@
+body {
+  font-family: sans-serif;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: #fbfbfb;
+}
+.wrapper {
+  font-size: 14px;
+
+  width: 500px;
+  margin: 10px auto;
+}
+.comment-input,
+.wrapper {
+  padding: 20px;
+
+  border: 1px solid #f1f1f1;
+  background-color: #fff;
+}
+.comment-input {
+  margin-bottom: 10px;
+}
+.comment-field {
+  margin-bottom: 15px;
+}
+.comment-field,
+.comment-field .comment-field-name {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.comment-field .comment-field-name {
+  font-size: 14px;
+
+  -webkit-flex-basis: 100px;
+  -ms-flex-preferred-size: 100px;
+  flex-basis: 100px;
+}
+.comment-field .comment-field-input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.comment-field-input input,
+.comment-field-input textarea {
+  font-size: 14px;
+
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+
+  padding: 5px;
+
+  resize: none;
+
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  outline: none;
+}
+.comment-field-input textarea {
+  height: 100px;
+}
+.comment-field-button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.comment-field-button button {
+  width: 80px;
+  padding: 5px 10px;
+
+  cursor: pointer;
+
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  background-color: #00a3cf;
+}
+.comment-field-button button:active {
+  background: #13c1f1;
+}
+.comment-list {
+  padding: 20px;
+
+  border: 1px solid #f1f1f1;
+  background-color: #fff;
+}
+.comment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  min-height: 50px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid #f1f1f1;
+}
+.comment .comment-user {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+.comment span {
+  font-style: italic;
+
+  color: #00a3cf;
+}
+.comment p {
+  margin: 0;
+}
+/*# sourceMappingURL=main.2c4715c0.css.map*/
