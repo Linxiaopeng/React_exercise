@@ -2,7 +2,23 @@ import React, { Component } from "react";
 
 class CommentList extends Component {
   render() {
-    return <div>CommentList</div>;
+    const comments = [
+      { username: "Jerry", content: "Hello" },
+      { username: "Tom", content: "World" },
+      { username: "Spike", content: "React" }
+    ];
+
+    return (
+      <div>
+        {comments.map((comment, i) => {
+          return (
+            <div key={i}>
+              {comment.username}:{comment.content}
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 }
 
