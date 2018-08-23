@@ -27,7 +27,7 @@ npm start
 1. 首先将头部 `import React, { Component } from "react";` 中的 `{ Component }` 去掉，因为此处暂时没用到组件，若是不删掉会报错
 
 2. `function` 部分代码如下：
-```
+```javascript
 function renderContent(content) {
    ReactDOM.render(<h1>{content}</h1>,
    document.getElementById("root"));
