@@ -5,7 +5,7 @@
 ### 安装 React.js
 
 安装 `create-react-app`，在控制台中输入 npm 命令： 
-```
+```npm
 npm install -g create-react-app 
 ```
 
