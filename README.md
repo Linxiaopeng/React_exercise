@@ -5,7 +5,7 @@
 ### 安装 React.js
 
 安装 `create-react-app`，在控制台中输入 npm 命令： 
-```npm
+```c
 npm install -g create-react-app 
 ```
 
@@ -34,7 +34,7 @@ function renderContent(content) {
 ```
 
 3. `render` 部分代码如下：
-```
+```javascript
 renderContent("Hello World");
 ```
 
@@ -45,7 +45,7 @@ renderContent("Hello World");
 `render` 方法返回并列多个 JSX 元素是不合法的，需要将外层元素包裹起来。
 
 错误做法：
-```
+```javascript
 render(){
     return(
         <div>A</div>
@@ -55,7 +55,7 @@ render(){
 ```
 
 正确做法：
-```
+```javascript
 render () {
   return (
     <div>
@@ -70,7 +70,7 @@ render () {
 JSX 中可以插入 JavaScript 表达式，如 `const` 语句
 
 表达式不仅可以作用在标签内部，也可以用在标签属性上，如：
-```
+```javascript
 render () {
   const className = 'header'
   return (
@@ -82,7 +82,7 @@ render () {
 ```
 
 表达式中也可以加入条件返回：
-```
+```javascript
 render () {
   const isGoodWord = true
   return (
@@ -100,7 +100,7 @@ render () {
 ```
 
 当条件返回 `null` 时就可以通过条件返回来隐藏元素：
-```
+```javascript
 render () {
   const isGoodWord = true
   return (
@@ -118,7 +118,7 @@ render () {
 ```
 
 JSX 元素也可以被赋予变量：
-```
+```javascript
 render () {
   const isGoodWord = true
   const goodWord = <strong> is good</strong>
