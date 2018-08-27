@@ -1,24 +1,130 @@
-// #13 黑色边框的容器组件
-
-// 实现一个组件 BlackBorderContianer，它会把作为它的嵌套结构的 每个直接子元素 都用一个黑色边框的 div 包裹起来.
-// 最后的 div.name 和 p.age 都具有一层黑色边框（1px solid #000000）外层结构。
-
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-class BlackBorderContainer extends Component {
+class Title extends Component {
+  handleClickOnTitle(word, e) {
+    alert(this, word);
+  }
+
   render() {
-    return <div className="blackBorder">{this.props.children}</div>;
+    return (
+      <h1 onClick={this.handleClickOnTitle.bind(this, "Hello")}>React.js</h1>
+    );
   }
 }
 
-ReactDOM.render(
-  <BlackBorderContainer>
-    <h2>React.js</h2>
-    <h4>This is content</h4>
-    Input:
-    <input />
-  </BlackBorderContainer>,
-  document.getElementById("root")
-);
+class Header extends Component {
+  render() {
+    return (
+      <div>
+        <Title />
+        <h2>This is Header</h2>
+      </div>
+    );
+  }
+}
+
+class LikeButton extends Component {
+  static defaultProps = {
+    likedText: "Unlike",
+    unlikedText: "Like"
+  };
+
+  constructor() {
+    super();
+    this.state = { isLiked: false };
+  }
+
+  handleClickOnLikeButton() {
+    this.setState({
+      isLiked: !this.state.isLiked
+    });
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClickOnLikeButton.bind(this)}>
+        {this.state.isLiked ? this.props.likedText : this.props.unlikedText}
+        👍
+      </button>
+    );
+  }
+}
+
+const users = [
+  { username: " Jerry", age: 21, gender: " male" },
+  { username: " Tom", age: 22, gender: " female" }
+];
+
+class User extends Component {
+  render() {
+    const { user } = this.props;
+    return (
+      <div>
+        <div>
+          Name:
+          {user.username}
+        </div>
+        <div>
+          Age:
+          {user.age}
+        </div>
+        <div>
+          Gender:
+          {user.gender}
+        </div>
+        <hr />
+      </div>
+    );
+  }
+}
+
+class List extends Component {
+  render() {
+    return (
+      <div>
+        {users.map((user, i) => (
+          <User key={i} user={user} />
+        ))}
+      </div>
+    );
+  }
+}
+
+class Main extends Component {
+  render() {
+    return (
+      <div>
+        <h2>This is main content</h2>
+        <LikeButton />
+        <LikeButton likedText="Nooice" unlikedText="Noice" />
+        <List />
+      </div>
+    );
+  }
+}
+
+class Footer extends Component {
+  render() {
+    return (
+      <div>
+        <h2>This is footer</h2>
+      </div>
+    );
+  }
+}
+
+class Index extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <Main />
+        <Footer />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Index />, document.getElementById("root"));

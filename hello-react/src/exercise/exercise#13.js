@@ -13,4 +13,12 @@ class BlackBorderContainer extends Component {
   }
 }
 
-ReactDOM.render(<BlackBorderContainer />, document.getElementById("root"));
+ReactDOM.render(
+  <BlackBorderContainer>
+    <h2>React.js</h2>
+    <h4>This is content</h4>
+    Input:
+    <input />
+  </BlackBorderContainer>,
+  document.getElementById("root")
+);
