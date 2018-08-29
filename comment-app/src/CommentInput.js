@@ -9,6 +9,10 @@ class CommentInput extends Component {
     };
   }
 
+  componentDidMount() {
+    this.textarea.focus();
+  }
+
   handleUsernameChange(event) {
     this.setState({
       username: event.target.value
@@ -21,12 +25,12 @@ class CommentInput extends Component {
     });
   }
 
-  handleSubmit () {
+  handleSubmit() {
     if (this.props.onSubmit) {
-      const { username, content } = this.state
-      this.props.onSubmit({username, content})
+      const { username, content } = this.state;
+      this.props.onSubmit({ username, content });
     }
-    this.setState({ content: '' })
+    this.setState({ content: "" });
   }
 
   render() {
@@ -45,6 +49,7 @@ class CommentInput extends Component {
           <span className="comment-field-name">Content:</span>
           <div className="comment-field-input">
             <textarea
+              ref={textarea => (this.textarea = textarea)}
               value={this.state.content}
               onChange={this.handleContentChange.bind(this)}
             />
