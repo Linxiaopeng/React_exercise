@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import TodoList from "./components/TodoList";
 import Star from "./Star.svg";
 import "./App.css";
 
@@ -16,7 +18,7 @@ class NavTitle extends Component {
 class ButtonAddTask extends Component {
   render() {
     return (
-      <div className="Botton-addTask-contaioner">
+      <div className="Botton-addTask-container">
         <button className="Button-addTask" />
       </div>
     );
@@ -24,14 +26,90 @@ class ButtonAddTask extends Component {
 }
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: []
+    };
+  }
+
+  generateID() {
+    return Math.floor(Math.random() * 9000) + 1000;
+  }
+
+  handleToggleComplete(taskId) {
+    var todos = this.state.todos;
+    for (var i in todos) {
+      if (todos[i].id === taskId) {
+        todos[i].isCompleted = !todos[i].isCompleted;
+        break;
+      }
+    }
+    this.setState({ todos });
+  }
+  handleRemoveTask(taskId) {
+    var todos = this.state.todos;
+    todos = todos.filter(task => {
+      return task.id !== taskId;
+    });
+    this.setState({ todos });
+  }
+  handleAdd() {
+    var taskName = ReactDOM.findDOMNode(this.refs.taskname).value.trim();
+    if (!taskName) {
+      return "";
+    }
+    var taskId = this.generateId();
+    var todos = this.state.todos;
+    todos.push({ id: taskId, name: taskName, isCompleted: false });
+    this.setState({
+      todos
+    });
+  }
+  handleRename(taskId, name) {
+    var todos = this.state.todos;
+    for (var i in todos) {
+      if (todos[i].id === taskId) {
+        todos[i].name = name;
+        break;
+      }
+    }
+    this.setState({ todos });
+  }
+
   render() {
+    var statistics = {
+      todoCount: this.state.todos.length || 0,
+      todoCompleteCount: this.state.todos.filter(todo => {
+        return todo.isCompleted;
+      }).length
+    };
+
     return (
       <div className="App">
         <header>
           <NavTitle />
         </header>
-        <footer>
+        <div>
           <ButtonAddTask />
+        </div>
+
+        <h3>Todo List Demo</h3>
+        <header>
+          <input type="text" ref="taskname" />
+          &nbsp;&nbsp;
+          <button onClick={this.handleAdd.bind(this)}>Add Todo</button>
+        </header>
+        <TodoList
+          todos={this.state.todos}
+          removeTask={this.handleRemoveTask.bind(this)}
+          toggleComplete={this.handleToggleComplete.bind(this)}
+          rename={this.handleRename.bind(this)}
+        />
+        <footer>
+          {statistics.todoCompleteCount}
+          已完成 / {statistics.todoCount}
+          总数
         </footer>
       </div>
     );
