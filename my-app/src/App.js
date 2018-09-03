@@ -33,7 +33,7 @@ class App extends Component {
     };
   }
 
-  generateID() {
+  generateId() {
     return Math.floor(Math.random() * 9000) + 1000;
   }
 
@@ -94,7 +94,13 @@ class App extends Component {
           <ButtonAddTask />
         </div>
 
-        <h3>Todo List Demo</h3>
+        <div className="Nav-subtitle-container">
+          <div className="Nav-subtitle">
+            {statistics.todoCompleteCount}
+            &nbsp;Tasks&nbsp;Completed&nbsp;/&nbsp;{statistics.todoCount}
+            &nbsp;Inbox
+          </div>
+        </div>
         <header>
           <input type="text" ref="taskname" />
           &nbsp;&nbsp;
@@ -106,11 +112,6 @@ class App extends Component {
           toggleComplete={this.handleToggleComplete.bind(this)}
           rename={this.handleRename.bind(this)}
         />
-        <footer>
-          {statistics.todoCompleteCount}
-          &nbsp;&nbsp;Completed / {statistics.todoCount}
-          &nbsp;&nbsp;Inbox
-        </footer>
       </div>
     );
   }
