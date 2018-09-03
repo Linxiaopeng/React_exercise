@@ -108,8 +108,8 @@ class App extends Component {
         />
         <footer>
           {statistics.todoCompleteCount}
-          已完成 / {statistics.todoCount}
-          总数
+          &nbsp;&nbsp;Completed / {statistics.todoCount}
+          &nbsp;&nbsp;Inbox
         </footer>
       </div>
     );
