@@ -96,13 +96,15 @@ class App extends Component {
 
         <div className="Nav-subtitle-container">
           <div className="Nav-subtitle">
-            {statistics.todoCompleteCount}
-            &nbsp;Tasks&nbsp;Completed&nbsp;/&nbsp;{statistics.todoCount}
-            &nbsp;Inbox
+            {statistics.todoCount - statistics.todoCompleteCount}
+            &nbsp;Tasks&nbsp;Remaining&nbsp;
+            {/* /&nbsp;
+            {statistics.todoCount}
+            &nbsp;Inbox */}
           </div>
         </div>
         <header>
-          <input type="text" ref="taskname" />
+          <input type="text" ref="taskname" placeholder="Add New" className="Input-container"/>
           &nbsp;&nbsp;
           <button onClick={this.handleAdd.bind(this)}>Add Todo</button>
         </header>

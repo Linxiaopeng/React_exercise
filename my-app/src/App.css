@@ -40,9 +40,24 @@
   font-size: 16px;
   font-weight: normal;
   line-height: normal;
-  margin-left: 46px;
+  margin: 7px 46px 14px 46px;
   letter-spacing: 0.03em;
-  color: #C1C4CB;
+  color: #c1c4cb;
+}
+
+input {
+  width: 319px;
+  height: 34px;
+  margin: 0 14px;
+  padding: 0 14px;
+  color: #c1c4cb;
+  border: 0;
+  border-radius: 4px;
+  background-color: hsla(212, 9%, 32%, 50%);
+}
+
+textarea {
+  color: #c1c4cb;
 }
 
 .Botton-addTask-container {
