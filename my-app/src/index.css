@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Noto Sans SC";
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,10 @@ h1,
 h2,
 h3,
 h4,
-button {
+button,
+ul,
+li {
   margin: 0px;
   padding: 0px;
+  list-style: none;
 }

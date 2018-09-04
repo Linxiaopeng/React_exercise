@@ -66,6 +66,11 @@ class App extends Component {
       todos
     });
   }
+  handleKeyUpAdd(e) {
+    if (e.keyCode == 13) {
+      this.handleAdd();
+    }
+  }
   handleRename(taskId, name) {
     var todos = this.state.todos;
     for (var i in todos) {
@@ -104,9 +109,15 @@ class App extends Component {
           </div>
         </div>
         <header>
-          <input type="text" ref="taskname" placeholder="Add New" className="Input-container"/>
+          <input
+            type="text"
+            ref="taskname"
+            placeholder="Add New"
+            className="Input-container"
+            onKeyUp={this.handleKeyUpAdd.bind(this)}
+          />
           &nbsp;&nbsp;
-          <button onClick={this.handleAdd.bind(this)}>Add Todo</button>
+          {/* <button onClick={this.handleAdd.bind(this)}>Add Todo</button> */}
         </header>
         <TodoList
           todos={this.state.todos}

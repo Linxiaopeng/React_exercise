@@ -65,6 +65,7 @@ export default class TodoList extends Component {
       <li key={taskId}>
         <input
           type="checkbox"
+          className="Task-checkbox"
           checked={isCompleted}
           onChange={this.toggleComplete.bind(this)}
         />

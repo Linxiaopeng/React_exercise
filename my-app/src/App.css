@@ -1,7 +1,7 @@
 .App {
   position: relative;
   width: 375px;
-  height: 667px;
+  height: 375px;
   text-align: center;
   border-radius: 12px;
   background-color: #292d36;
@@ -74,4 +74,9 @@ textarea {
   border-radius: 100%;
   background: #4b525a;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.36);
+}
+
+.Task-checkbox{
+  width: 16px;
+  height: 16px;
 }
