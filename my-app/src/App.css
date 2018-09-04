@@ -40,7 +40,7 @@
   font-size: 16px;
   font-weight: normal;
   line-height: normal;
-  margin: 7px 46px 14px 46px;
+  margin: 7px 14px 14px 14px;
   letter-spacing: 0.03em;
   color: #c1c4cb;
 }
@@ -54,10 +54,6 @@ input {
   border: 0;
   border-radius: 4px;
   background-color: hsla(212, 9%, 32%, 50%);
-}
-
-textarea {
-  color: #c1c4cb;
 }
 
 .Botton-addTask-container {
@@ -76,7 +72,24 @@ textarea {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.36);
 }
 
-.Task-checkbox{
+.Task-container {
+  display: flex;
+  align-items: center;
+  flex-flow: row;
+}
+
+.Task-checkbox {
   width: 16px;
   height: 16px;
+  margin: 14px 2px 7px 14px;
+  border-radius: 4px;
+}
+
+.Task-title {
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  margin-top: 2px;
+
+  color: #c1c4cb;
 }

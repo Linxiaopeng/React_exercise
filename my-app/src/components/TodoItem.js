@@ -53,16 +53,16 @@ export default class TodoList extends Component {
         );
       } else {
         operation = (
-          <span>
-            <b>{name}</b>
+          <span className="Task-title">
+            {name}
             &nbsp;&nbsp;
-            <button onClick={this.handleEdit.bind(this)}>Edit</button>
+            {/* <button onClick={this.handleEdit.bind(this)}>Edit</button> */}
           </span>
         );
       }
     }
     return (
-      <li key={taskId}>
+      <li key={taskId} className="Task-container">
         <input
           type="checkbox"
           className="Task-checkbox"
@@ -72,7 +72,7 @@ export default class TodoList extends Component {
         &nbsp;&nbsp;
         {operation}
         &nbsp;&nbsp;
-        <button onClick={this.handleRemove.bind(this)}>Remove</button>
+        <button className="Task-remove" onClick={this.handleRemove.bind(this)}>Remove</button>
       </li>
     );
   }
