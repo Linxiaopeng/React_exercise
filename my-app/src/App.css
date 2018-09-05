@@ -86,10 +86,16 @@ input {
 }
 
 .Task-title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
   font-style: normal;
   margin-top: 2px;
-
   color: #c1c4cb;
+}
+
+.Task-remove{
+  right: 14px;
+  position: absolute;
+  height: 14px;
+  width: 14px;
 }

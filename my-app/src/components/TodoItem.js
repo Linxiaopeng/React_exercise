@@ -72,7 +72,10 @@ export default class TodoList extends Component {
         &nbsp;&nbsp;
         {operation}
         &nbsp;&nbsp;
-        <button className="Task-remove" onClick={this.handleRemove.bind(this)}>Remove</button>
+        <button
+          className="Task-remove"
+          onClick={this.handleRemove.bind(this)}
+        />
       </li>
     );
   }
